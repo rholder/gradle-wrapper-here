@@ -55,7 +55,7 @@ function prepare_gradle () {
 }
 
 function prepare_wrapper () {
-	echo "Generating wrapper in ${__BUILD_DIR__}..."
+    echo "Generating wrapper in ${__BUILD_DIR__}..."
     gradle-${GRADLE_VERSION}/bin/gradle wrapper
 
     echo "Collecting wrapper in ${WRAPPER_TAR}..."
@@ -63,7 +63,7 @@ function prepare_wrapper () {
 }
 
 function prepare_binary () {
-	echo "Assembling binary..."
+    echo "Assembling binary..."
     cat ../gradle-wrapper-here.sh ${WRAPPER_TAR} > ${FINAL_BINARY}
     chmod +x ${FINAL_BINARY}
     echo "Successfully generated: ${__BUILD_DIR__}/${FINAL_BINARY}"
