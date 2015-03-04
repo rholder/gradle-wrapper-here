@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Copyright 2014 Ray Holder
+# Copyright 2014-2015 Ray Holder
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ __DIR__="$(cd "$(dirname "${0}")"; echo $(pwd))"
 __BASE__="$(basename "${0}")"
 __FILE__="${__DIR__}/${__BASE__}"
 
-VERSION=0.1.0
-GRADLE_VERSION=2.2.1
+VERSION=0.1.1
+GRADLE_VERSION=2.3
 
 function show_header () {
     echo "gradle-wrapper-here ${VERSION} - drop a Gradle wrapper in the current directory"
