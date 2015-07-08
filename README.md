@@ -1,4 +1,4 @@
-[![Latest Version](http://img.shields.io/badge/latest-0.1.2-brightgreen.svg)](https://github.com/rholder/gradle-wrapper-here/releases/tag/v0.1.2) [![License](http://img.shields.io/badge/license-apache%202-brightgreen.svg)](https://github.com/rholder/gradle-wrapper-here/blob/master/LICENSE)
+[![Latest Version](http://img.shields.io/badge/latest-0.1.3-brightgreen.svg)](https://github.com/rholder/gradle-wrapper-here/releases/tag/v0.1.3) [![License](http://img.shields.io/badge/license-apache%202-brightgreen.svg)](https://github.com/rholder/gradle-wrapper-here/blob/master/LICENSE)
 
 ##What is this?
 
@@ -16,7 +16,7 @@ mechanism to getting a working Gradle installation set up for a project.
 Drop the latest version of `gradle-wrapper-here` into your $PATH and set it executable:
 
 ```bash
-sudo curl -o /usr/local/bin/gradle-wrapper-here -L https://github.com/rholder/gradle-wrapper-here/releases/download/v0.1.2/gradle-wrapper-here && \
+sudo curl -o /usr/local/bin/gradle-wrapper-here -L https://github.com/rholder/gradle-wrapper-here/releases/download/v0.1.3/gradle-wrapper-here && \
 sudo chmod +x /usr/local/bin/gradle-wrapper-here
 ```
 

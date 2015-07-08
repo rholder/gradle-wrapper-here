@@ -23,7 +23,7 @@ __BASE__="$(basename "${0}")"
 __FILE__="${__DIR__}/${__BASE__}"
 
 VERSION=0.1.1
-GRADLE_VERSION=2.3
+GRADLE_VERSION=2.4
 
 function show_header () {
     echo "gradle-wrapper-here ${VERSION} - drop a Gradle wrapper in the current directory"
