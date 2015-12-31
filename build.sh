@@ -23,7 +23,7 @@ __BASE__="$(basename "${0}")"
 __FILE__="${__DIR__}/${__BASE__}"
 __BUILD_DIR__="${__DIR__}/build"
 
-GRADLE_VERSION=2.4
+GRADLE_VERSION=2.10
 WRAPPER_TAR="gradle-wrapper-${GRADLE_VERSION}.tar.gz"
 FINAL_BINARY="gradle-wrapper-here"
 
