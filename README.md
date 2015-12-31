@@ -1,4 +1,4 @@
-[![Latest Version](http://img.shields.io/badge/latest-0.1.3-brightgreen.svg)](https://github.com/rholder/gradle-wrapper-here/releases/tag/v0.1.3) [![License](http://img.shields.io/badge/license-apache%202-brightgreen.svg)](https://github.com/rholder/gradle-wrapper-here/blob/master/LICENSE)
+[![Latest Version](http://img.shields.io/badge/latest-0.1.4-brightgreen.svg)](https://github.com/rholder/gradle-wrapper-here/releases/tag/v0.1.4) [![License](http://img.shields.io/badge/license-apache%202-brightgreen.svg)](https://github.com/rholder/gradle-wrapper-here/blob/master/LICENSE)
 
 ##What is this?
 
@@ -6,7 +6,7 @@ What if you could just extract the Gradle wrapper files into the current
 directory without ever running Gradle or even having it installed? Well now you
 can do that with `gradle-wrapper-here`.
 
-I like the [Gradle wrapper](http://gradle.org/docs/2.4/userguide/gradle_wrapper.html),
+I like the [Gradle wrapper](http://gradle.org/docs/2.10/userguide/gradle_wrapper.html),
 but I think it's silly to have to have an actual installation of Gradle on your
 machine to bootstrap from before you can start using it for the first time on a
 project. If you've never used Gradle before, I think this is a much quicker
@@ -16,7 +16,7 @@ mechanism to getting a working Gradle installation set up for a project.
 Drop the latest version of `gradle-wrapper-here` into your $PATH and set it executable:
 
 ```bash
-sudo curl -o /usr/local/bin/gradle-wrapper-here -L https://github.com/rholder/gradle-wrapper-here/releases/download/v0.1.3/gradle-wrapper-here && \
+sudo curl -o /usr/local/bin/gradle-wrapper-here -L https://github.com/rholder/gradle-wrapper-here/releases/download/v0.1.4/gradle-wrapper-here && \
 sudo chmod +x /usr/local/bin/gradle-wrapper-here
 ```
 
