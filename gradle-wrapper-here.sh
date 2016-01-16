@@ -22,16 +22,26 @@ __DIR__="$(cd "$(dirname "${0}")"; echo $(pwd))"
 __BASE__="$(basename "${0}")"
 __FILE__="${__DIR__}/${__BASE__}"
 
-VERSION=0.1.4
+VERSION=0.2.0
 GRADLE_VERSION=2.10
 
-function show_header () {
-    echo "gradle-wrapper-here ${VERSION} - drop a Gradle wrapper in the current directory"
-    echo ""
-    echo "Gradle Version: ${GRADLE_VERSION}"
-    echo ""
-    echo "You can find the latest version and file bugs at https://github.com/rholder/gradle-wrapper-here."
-    echo ""
+function usage () {
+        cat << EOF
+Usage: gradle-wrapper-here [directory]
+
+  Use gradle-wrapper-here to drop a Gradle wrapper into the given directory.
+
+Examples:
+
+  gradle-wrapper-here ./
+  gradle-wrapper-here potato-project
+  gradle-wrapper-here fruit/banana-stand
+
+You can find the latest version and file bugs at https://github.com/rholder/gradle-wrapper-here.
+
+Gradle version: ${GRADLE_VERSION}
+gradle-wrapper-here: ${VERSION}
+EOF
 }
 
 function check_environment () {
@@ -54,9 +64,14 @@ function extract_gradle_wrapper () {
     tail -n+${ARCHIVE} ${__FILE__} | tar zxv
 }
 
-show_header
-check_environment
-extract_gradle_wrapper
+TARGET_DIR=${1:-}
+if [ -n "${TARGET_DIR}" ]; then
+    cd "${TARGET_DIR}"
+    extract_gradle_wrapper
+else
+    usage
+    exit 1
+fi
 
 exit 0
 
