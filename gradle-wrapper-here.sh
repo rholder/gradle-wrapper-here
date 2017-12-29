@@ -22,8 +22,8 @@ __DIR__="$(cd "$(dirname "${0}")"; echo $(pwd))"
 __BASE__="$(basename "${0}")"
 __FILE__="${__DIR__}/${__BASE__}"
 
-VERSION=0.3.0
-GRADLE_VERSION=2.14.1
+VERSION=0.4.0
+GRADLE_VERSION=3.2.1
 
 function usage () {
         cat << EOF
