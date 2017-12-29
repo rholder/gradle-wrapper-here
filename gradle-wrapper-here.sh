@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Copyright 2014-2016 Ray Holder
+# Copyright 2014-2017 Ray Holder
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ __DIR__="$(cd "$(dirname "${0}")"; echo $(pwd))"
 __BASE__="$(basename "${0}")"
 __FILE__="${__DIR__}/${__BASE__}"
 
-VERSION=0.4.0
-GRADLE_VERSION=3.2.1
+VERSION=0.5.0
+GRADLE_VERSION=4.4.1
 
 function usage () {
         cat << EOF
