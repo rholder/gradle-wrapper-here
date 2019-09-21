@@ -1,6 +1,6 @@
 .PHONY: clean build
 
-TARGET_GRADLE_VERSION=4.4.1
+TARGET_GRADLE_VERSION=5.6.2
 
 all: clean build
 
