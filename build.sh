@@ -69,8 +69,20 @@ function prepare_binary () {
     echo "Successfully generated: ${__BUILD_DIR__}/${FINAL_BINARY}"
 }
 
+function prepare_checksum() {
+    echo "Checking for binary..."
+    file ${FINAL_BINARY}
+
+    echo "Generating SHA256 checksum..."
+    sha256sum ${FINAL_BINARY} | tee sha256sums
+
+    echo "Verifying SHA256 checksum..."
+    sha256sum -c sha256sums
+}
+
 check_environment
 prepare_build
 prepare_gradle
 prepare_wrapper
 prepare_binary
+prepare_checksum
