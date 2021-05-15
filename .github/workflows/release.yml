@@ -1,0 +1,60 @@
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+name: Automatic Release Workflow
+
+jobs:
+  build:
+    name: Upload Release Assets
+    runs-on: ubuntu-18.04
+    steps:
+
+    - name: Set up Java
+      uses: actions/setup-java@v2.0.0
+      with:
+        distribution: 'zulu'
+        java-version: '8'
+      id: java_setup
+
+    - name: Check out Code
+      uses: actions/checkout@v2.3.4
+
+    - name: Build Release
+      run: |
+        make
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1.1.4
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: true
+        prerelease: true
+
+    - name: Upload Release Asset - gradle-wrapper-here
+      id: upload-release-asset-gradle-wrapper-here
+      uses: actions/upload-release-asset@v1.0.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./build/gradle-wrapper-here
+        asset_name: gradle-wrapper-here
+        asset_content_type: application/octet-stream
+
+    - name: Upload Release Asset - sha256sums
+      id: upload-release-asset-sha256sums
+      uses: actions/upload-release-asset@v1.0.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./build/sha256sums
+        asset_name: sha256sums
+        asset_content_type: text/plain
