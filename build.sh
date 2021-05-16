@@ -24,6 +24,7 @@ __FILE__="${__DIR__}/${__BASE__}"
 __BUILD_DIR__="${__DIR__}/build"
 
 GRADLE_VERSION="${1}"
+GRADLE_WRAPPER_HERE_VERSION="${2}"
 WRAPPER_TAR="gradle-wrapper-${GRADLE_VERSION}.tar.gz"
 FINAL_BINARY="gradle-wrapper-here"
 
@@ -64,7 +65,8 @@ function prepare_wrapper () {
 
 function prepare_binary () {
     echo "Assembling binary..."
-    cat ../gradle-wrapper-here.sh ${WRAPPER_TAR} > ${FINAL_BINARY}
+    sed "s/__VERSION__/${GRADLE_WRAPPER_HERE_VERSION}/g; s/__GRADLE_VERSION__/${GRADLE_VERSION}/g" ../gradle-wrapper-here.sh.template > gradle-wrapper-here.sh
+    cat gradle-wrapper-here.sh ${WRAPPER_TAR} > ${FINAL_BINARY}
     chmod +x ${FINAL_BINARY}
     echo "Successfully generated: ${__BUILD_DIR__}/${FINAL_BINARY}"
 }
