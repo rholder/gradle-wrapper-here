@@ -57,7 +57,7 @@ function prepare_gradle () {
 
 function prepare_wrapper () {
     echo "Generating wrapper in ${__BUILD_DIR__}..."
-    gradle-${GRADLE_VERSION}/bin/gradle wrapper
+    gradle-${GRADLE_VERSION}/bin/gradle wrapper --warning-mode all
 
     echo "Collecting wrapper in ${WRAPPER_TAR}..."
     tar zcf ${WRAPPER_TAR} --numeric-owner gradle/ gradlew gradlew.bat
