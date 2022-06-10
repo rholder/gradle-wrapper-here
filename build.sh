@@ -56,6 +56,9 @@ function prepare_gradle () {
 }
 
 function prepare_wrapper () {
+    echo "Creating empty settings.gradle to generate valid Gradle wrapper..."
+    touch settings.gradle
+
     echo "Generating wrapper in ${__BUILD_DIR__}..."
     gradle-${GRADLE_VERSION}/bin/gradle wrapper --warning-mode all
 
