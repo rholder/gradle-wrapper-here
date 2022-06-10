@@ -1,4 +1,4 @@
-[![Latest Version](http://img.shields.io/badge/latest-0.7.2-brightgreen.svg)](https://github.com/rholder/gradle-wrapper-here/releases/tag/v0.7.2) [![License](http://img.shields.io/badge/license-apache%202-brightgreen.svg)](https://github.com/rholder/gradle-wrapper-here/blob/master/LICENSE)
+[![Latest Version](http://img.shields.io/badge/latest-0.8.0-brightgreen.svg)](https://github.com/rholder/gradle-wrapper-here/releases/tag/v0.8.0) [![License](http://img.shields.io/badge/license-apache%202-brightgreen.svg)](https://github.com/rholder/gradle-wrapper-here/blob/master/LICENSE)
 
 ## What is this?
 What if you could just extract the Gradle wrapper files into the project
@@ -12,11 +12,11 @@ project. If you've never used Gradle before, I believe this is a much quicker
 mechanism to getting a working Gradle installation set up for a project.
 
 ## Installation
-### OSX & Linux
+### macOS & Linux
 Drop the latest version of `gradle-wrapper-here` into your $PATH and set it executable:
 
 ```bash
-sudo curl -o /usr/local/bin/gradle-wrapper-here -L https://github.com/rholder/gradle-wrapper-here/releases/download/v0.7.2/gradle-wrapper-here && \
+sudo curl -o /usr/local/bin/gradle-wrapper-here -L https://github.com/rholder/gradle-wrapper-here/releases/download/v0.8.0/gradle-wrapper-here && \
 sudo chmod +x /usr/local/bin/gradle-wrapper-here
 ```
 
